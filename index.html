@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Wikipedia bot</title>
+</head>
+
+<body>
+    <section>
+        <form>
+            <p style="display: inline-block">
+                <label for="parle">Wikipedia references translation from English to French wikicode</label><br />
+                <textarea name="parle" id="parle" rows="40" cols="50"
+                    placeholder="Paste the english wikipedia code here"></textarea>
+            </p>
+            <p style="display: inline-block">
+                <textarea id="resultat" rows="40" cols="50" placeholder="Get the french wikipedia code here"></textarea>
+            </p>
+            <input id="valid" type="button" value="Valider" />
+        </form>
+    </section>
+
+    <script src="utilities/dates.js"></script>
+    <script src="utilities/leftright.js"></script>
+
+    <script src="templates/references.js"></script>
+
+    <script src="event.js"></script>
+</body>
+
+</html>
