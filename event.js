@@ -1,6 +1,13 @@
 var dicoTemplate = {
     "cite web": Ref.translate,
     "cite news": Ref.translate
+};
+
+function translate(txt) {
+    var list = splitTemplates(txt);
+    list = translateTemplatesOneByOne(list);
+    txt = list.join('');
+    return fixRefs(txt)
 }
 
 function splitTemplates(txt) {
@@ -18,8 +25,7 @@ function splitTemplates(txt) {
     return list
 }
 
-function translate(txt) {
-    var list = splitTemplates(txt);
+function translateTemplatesOneByOne(list) {
     var stack = [];
     for (let i = 0; i < list.length; i++) {
         if (list[i] === '{{') {
@@ -32,7 +38,7 @@ function translate(txt) {
             i = start + translatedText.length - 1;
         }
     }
-    return list.join('');
+    return list
 }
 
 function translateTemplate(txt) {
