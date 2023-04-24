@@ -32,10 +32,10 @@ function translateTemplatesOneByOne(list) {
             stack.push(i);
         } else if (list[i] === '}}') {
             const start = stack.pop();
-            const text = list.slice(start + 1, i);
-            const translatedText = translateTemplate(text);
+            const text = list.slice(start, i+1);
+            const translatedText = translateTemplate(text.join(''));
             list.splice(start, i - start + 1, translatedText);
-            i = start + translatedText.length - 1;
+            i = start + 1;
         }
     }
     return list
@@ -47,7 +47,7 @@ function translateTemplate(txt) {
         return dicoTemplate[titre](txt);
     } else {
         console.log("error - template :'" + titre + "' not handled");
-        return droite(txt, "}}")
+        return right(txt, "}}")
     }
 }
 

@@ -46,7 +46,7 @@ class Ref {
                 console.log("Error in ref - parameter : " + tab2[0] + " is not handled by the script");
             }
         }
-        console.log(this.dico);
+        //console.log(this.dico);
     }
 
     mergeWikiLinks() {
