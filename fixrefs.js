@@ -1,8 +1,6 @@
 function fixRefs(txt) {
-    //txt : string
     //put a comma between two refs and moves the periods from before
     //the refs to after the refs
-    //return : txt
     var tab = txt.split('> <');
     txt = tab.join('>{{,}}<');
     var tab = txt.split('><');
